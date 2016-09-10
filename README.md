@@ -7,3 +7,4 @@ This repo will serve as a resource for myself in the future. Covers JavaScript's
 __Table Of Contents:__
 
 * Statements 
+* Expressions
