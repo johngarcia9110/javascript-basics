@@ -1,14 +1,15 @@
 // Basic Operators
 
-// Assignment: = 
-// Math: +, - , * , /
-// Compound Assignment: +=, -=, *=, /=
-// Increment/Decrement: ++, --
-// Property Access: . ( example: console.log() )
-// Equality: == (loose-equals), === (strict-equals), !== (strict not-equals)
-// Comparison: <, >, <=, >=
-// Logical: && (and), || (or)
-
+/* 
+ Assignment: = 
+ Math: +, - , * , /
+ Compound Assignment: +=, -=, *=, /=
+ Increment/Decrement: ++, --
+ Property Access: . ( example: console.log() )
+ Equality: == (loose-equals), === (strict-equals), !== (strict not-equals)
+ Comparison: <, >, <=, >=
+ Logical: && (and), || (or)
+*/
 
 var a = 0;
 
