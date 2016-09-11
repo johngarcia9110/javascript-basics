@@ -14,3 +14,4 @@ __Table Of Contents:__
 * Values and Types
 * Variables and Blocks
 * Conditional Statements
+* Loops
