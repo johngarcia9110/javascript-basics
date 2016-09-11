@@ -15,26 +15,43 @@ Bonus Challenge: Try to incorporate input into this program, perhaps with the pr
 var phoneCost = 399.99;
 var accCost = 49.99;
 
-var tax = phoneCost * 0.09;
+var ptax = phoneCost * 0.09;
+var atax = accCost * 0.09;
 var threshold = 450;
-var bankBal = 2000;
+var bankBal = prompt("How Much Money Do You Have In The Bank?");
 
-var totalPhoneCost = phoneCost + tax;
+var totalPhoneCost = phoneCost + ptax;
+var totalAccCost = accCost + atax;
 
-console.log(totalPhoneCost.toFixed(2));
+var phonesPurchased = 0;
+var accPurchased = 0;
+
 
 
 function purchasePhone(){
-    if(bankBal > phoneCost){
-        bankBal -=  phoneCost * tax;
+    
+    if(bankBal > totalPhoneCost){
+        bankBal -=  totalPhoneCost;
         console.log("You purchased a phone! Your bank balanace is: $" + bankBal.toFixed(2));
+        phonesPurchased++;
     }else{
-        console.log("You don't have enough for this phone.")
+        console.log("You don't have enough for this phone.");
     }
+    if( totalAccCost + totalPhoneCost > threshold ){
+        bankBal -= totalAccCost;
+        console.log("You also got an accessory this time! Your bank balance is: $" + bankBal.toFixed(2) );
+        accPurchased++;
+    }else{
+        bankBal = bankBal;
+    }
+    
 }
 
-// purchasePhone();
+ purchasePhone();
 
-// while(bankBal > (phoneCost * tax) ){
-//     purchasePhone();
-// }
+while(bankBal > totalPhoneCost + totalAccCost ){
+    purchasePhone();
+}
+
+console.log("Total Phones Purchased: " + phonesPurchased);
+console.log("Total Accessories Purchased: " + accPurchased);
