@@ -8,3 +8,6 @@ __Table Of Contents:__
 
 * Statements 
 * Expressions
+* Executing A Program
+* Input, Output
+* Operators
