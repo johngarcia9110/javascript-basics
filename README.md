@@ -11,3 +11,6 @@ __Table Of Contents:__
 * Executing A Program
 * Input, Output
 * Operators
+* Values and Types
+* Variables and Blocks
+* Conditional Statements
