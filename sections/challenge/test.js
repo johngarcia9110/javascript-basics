@@ -18,7 +18,7 @@ var accCost = 49.99;
 var ptax = phoneCost * 0.09;
 var atax = accCost * 0.09;
 var threshold = 450;
-var bankBal = prompt("How Much Money Do You Have In The Bank?");
+var bankBal = prompt("How Much Money Do You Have In The Bank?", 0);
 
 var totalPhoneCost = phoneCost + ptax;
 var totalAccCost = accCost + atax;
@@ -31,18 +31,26 @@ var accPurchased = 0;
 function purchasePhone(){
     
     if(bankBal > totalPhoneCost){
+        
         bankBal -=  totalPhoneCost;
         console.log("You purchased a phone! Your bank balanace is: $" + bankBal.toFixed(2));
         phonesPurchased++;
+        
     }else{
         console.log("You don't have enough for this phone.");
     }
-    if( totalAccCost + totalPhoneCost > threshold ){
+    
+    if( totalAccCost + totalPhoneCost > threshold && bankBal > 0 && phonesPurchased > 0){
+        
         bankBal -= totalAccCost;
         console.log("You also got an accessory this time! Your bank balance is: $" + bankBal.toFixed(2) );
         accPurchased++;
+        
     }else{
+        
+        console.log("You can't afford an accessory this time.");
         bankBal = bankBal;
+        
     }
     
 }
@@ -50,7 +58,9 @@ function purchasePhone(){
  purchasePhone();
 
 while(bankBal > totalPhoneCost + totalAccCost ){
+    
     purchasePhone();
+    
 }
 
 console.log("Total Phones Purchased: " + phonesPurchased);
